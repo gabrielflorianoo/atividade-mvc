@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todos os Animais</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        />
+        <style>
+            body {
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container {
+                width: 70vh;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            .box {
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+            }
+
+            .animal-list {
+                margin-top: 20px;
+            }
+
+            .animal-item {
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+            }
+
+            .animal-item .emoji {
+                font-size: 2rem;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title has-text-centered">Lista de Animais 🐾</h1>
+
+            <div class="box">
+                <a href="animals" class="button is-primary is-fullwidth"
+                    >Cadastrar animal</a
+                >
+                <div class="animal-list">
+                    {% for animal in animals %}
+                    <div class="animal-item">
+                        <span class="emoji">{{ animal.emoji }}</span>
+                        <div>
+                            <p class="is-size-5">
+                                <strong>{{ animal.name }}</strong> -
+                                <strong>{{ animal.species }}</strong>
+                            </p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="is-size-5">Nenhum animal cadastrado.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

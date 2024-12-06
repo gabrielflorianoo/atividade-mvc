@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insira seu animal 🐶</title>
+        <!-- Adicionando Bulma -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        />
+        <style>
+            /* Customizando um pouco o estilo */
+            body {
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .my-container {
+                width: 70vh;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            .form-container {
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+            }
+
+            .field {
+                margin-bottom: 15px;
+            }
+
+            .control input {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="my-container">
+            <div class="form-container box">
+                <h1 class="title has-text-centered">
+                    Qual seu animal de estimação? 🐶
+                </h1>
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="label" for="animal">
+                            Se não tiver, qual animal gostaria de ter?
+                        </label>
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="text"
+                                id="animal"
+                                name="species"
+                                placeholder="Digite a especie do animal"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="animal">
+                            Qual nome ele tem ou gostaria que tivesse? 🐵
+                        </label>
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="text"
+                                id="animal"
+                                name="animal_name"
+                                placeholder="Digite o nome do animal"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for="emoji"
+                            >Escolha um emoji para representar seu
+                            animal:</label
+                        >
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="text"
+                                id="emoji"
+                                name="emoji"
+                                placeholder="Escolha um emoji (ex: 🐱)"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button
+                                class="button is-primary is-fullwidth"
+                                type="submit"
+                            >
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
